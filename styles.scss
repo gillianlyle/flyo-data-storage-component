@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+$gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%) ;
+$pale-blue:hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$very-dark-blue: hsl(229, 57%, 11%);
+$white:#fff;
+
+body {
+    background: $very-dark-blue url("images/bg-desktop.svg") no-repeat bottom fixed;
+    font-size:14px;
+    font-family: 'Raleway', sans-serif;
+    color:$white;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    grid-column: 1 / span 4; 
+    
+    a { 
+        color: $white;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 30px;
+    padding: 10px;
+    width:65%;
+    align-content:center;
+    margin: auto;
+    height:calc(100vh - 36px)
+}
+
+
+.storage-options {
+    border-radius:5px 100px 5px 5px;
+    background: $dark-blue;
+    padding:40px;
+
+    .file-options {
+        padding: 20px 0 0;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width:fit-content;
+    }
+}
+
+button {
+    background:$very-dark-blue;
+    border: 0 none;
+    border-radius: 10px;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+
+    img {
+        width:16px;
+        display:grid;
+        margin: auto
+    }
+}
+
+.storage-slider {
+    grid-column: 2 / span 3;
+    align-self:end;
+
+    .content {
+        border-radius:5px;
+        background: $dark-blue;
+        padding:20px;
+        position: relative;
+    
+        .remaining-storage {
+            background: #fff;
+            padding: 8px 15px;
+            color: #000;
+            position: absolute;
+            top: -25px;
+            right: 22px;
+            border-radius: 10px;
+            border:1px solid $very-dark-blue;
+            font-size:8px;
+            
+            strong {
+                font-size:30px
+            }
+
+            ::before {
+                content: "";
+                border: 20px solid transparent;
+                border-right: 20px solid $white;
+                position: absolute;
+                bottom: -15px;
+                right: 0px;
+            }
+        }
+    }
+    
+    .range-markers {
+        margin:10px 0;
+
+        .end {
+            float: right;
+        }
+    }
+
+    .slider {
+        background:$very-dark-blue;
+        height: 15px;
+        border-radius: 10px;
+        border: 2px solid $very-dark-blue;
+
+            .range {
+                background:linear-gradient($gradient);
+                height: 15px;
+                border-radius: 10px;
+                width:81.5%;
+                position: relative;
+            }
+
+            .range::after {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                top: 2px;
+                right: 3px;
+            }
+        }
+    }
+
+@media only screen and (max-width: 780px){
+    body {
+        background: $very-dark-blue url("images/bg-mobile.svg") no-repeat top fixed;
+        background-size: cover;
+    }
+
+   .wrapper {
+        padding: 0;
+        grid-gap: 10px;
+        width: 80%;
+        grid-template-columns: auto;
+    }
+
+   .container {
+        grid-column: 1;
+        margin-bottom:15px;
+    }
+
+    .storage-slider {
+
+        .content {
+
+            p {
+                text-align:center;
+            }
+
+            .remaining-storage {
+                top: 122px;
+                right: 35%;
+                padding: 10px 20px;
+                position: absolute;
+                text-align: center;
+                display: grid;
+                grid-template-columns: auto auto;
+                align-items: center;
+                width: fit-content;
+
+                    ::before {
+                        display:none
+                    }
+            }
+        }
+    } 
+
+   .attribution {
+        grid-column: 1;
+        margin-top: 30px;
+    }    
+}

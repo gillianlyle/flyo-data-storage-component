@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+body {
+  background: #0c122c url("images/bg-desktop.svg") no-repeat bottom fixed;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  grid-column: 1/span 4;
+}
+.attribution a {
+  color: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 30px;
+  padding: 10px;
+  width: 65%;
+  align-content: center;
+  margin: auto;
+  height: calc(100vh - 36px);
+}
+
+.storage-options {
+  border-radius: 5px 100px 5px 5px;
+  background: #1d2c67;
+  padding: 40px;
+}
+.storage-options .file-options {
+  padding: 20px 0 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
+}
+
+button {
+  background: #0c122c;
+  border: 0 none;
+  border-radius: 10px;
+  margin: 0 5px;
+  width: 40px;
+  height: 40px;
+}
+button img {
+  width: 16px;
+  display: grid;
+  margin: auto;
+}
+
+.storage-slider {
+  grid-column: 2/span 3;
+  align-self: end;
+}
+.storage-slider .content {
+  border-radius: 5px;
+  background: #1d2c67;
+  padding: 20px;
+  position: relative;
+}
+.storage-slider .content .remaining-storage {
+  background: #fff;
+  padding: 8px 15px;
+  color: #000;
+  position: absolute;
+  top: -25px;
+  right: 22px;
+  border-radius: 10px;
+  border: 1px solid #0c122c;
+  font-size: 8px;
+}
+.storage-slider .content .remaining-storage strong {
+  font-size: 30px;
+}
+.storage-slider .content .remaining-storage ::before {
+  content: "";
+  border: 20px solid transparent;
+  border-right: 20px solid #fff;
+  position: absolute;
+  bottom: -15px;
+  right: 0px;
+}
+.storage-slider .range-markers {
+  margin: 10px 0;
+}
+.storage-slider .range-markers .end {
+  float: right;
+}
+.storage-slider .slider {
+  background: #0c122c;
+  height: 15px;
+  border-radius: 10px;
+  border: 2px solid #0c122c;
+}
+.storage-slider .slider .range {
+  background: linear-gradient(#ffa399, #ff4d97);
+  height: 15px;
+  border-radius: 10px;
+  width: 81.5%;
+  position: relative;
+}
+.storage-slider .slider .range::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  right: 3px;
+}
+
+@media only screen and (max-width: 780px) {
+  body {
+    background: #0c122c url("images/bg-mobile.svg") no-repeat top fixed;
+    background-size: cover;
+  }
+
+  .wrapper {
+    padding: 0;
+    grid-gap: 10px;
+    width: 80%;
+    grid-template-columns: auto;
+  }
+
+  .container {
+    grid-column: 1;
+    margin-bottom: 15px;
+  }
+
+  .storage-slider .content p {
+    text-align: center;
+  }
+  .storage-slider .content .remaining-storage {
+    top: 122px;
+    right: 35%;
+    padding: 10px 20px;
+    position: absolute;
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    width: fit-content;
+  }
+  .storage-slider .content .remaining-storage ::before {
+    display: none;
+  }
+
+  .attribution {
+    grid-column: 1;
+    margin-top: 30px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
